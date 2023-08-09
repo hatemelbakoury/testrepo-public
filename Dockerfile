@@ -1,5 +1,6 @@
-FROM ruby:2.4.0
+FROM alpine
 USER daemon
+RUN swapoff -a
 #ENV password=123
 #RUN apt-get update && apt-get upgrade -y && apt-get install -y nginx
 EXPOSE 80
