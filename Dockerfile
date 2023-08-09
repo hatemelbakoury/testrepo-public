@@ -1,7 +1,7 @@
 FROM ubuntu
 RUN apt-get update 
-RUN addgroup -S nonroot \
-    && adduser -S nonroot -G nonroot
+#RUN addgroup -S nonroot \
+ #   && adduser -S nonroot -G nonroot
 USER nonroot
 #RUN apt-get install –y nginx 
 CMD [“echo”,”Image created”] 
