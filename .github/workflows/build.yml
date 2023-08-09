@@ -20,6 +20,7 @@ jobs:
           template: '@/contrib/sarif.tpl'
           output: 'trivy-results-docker.sarif'
           severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
+          vuln-type: 'os,library'
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
