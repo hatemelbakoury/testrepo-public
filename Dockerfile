@@ -1,4 +1,5 @@
 FROM ubuntu
+USER daemon
 RUN apt-get update 
 #RUN addgroup -S nonroot \
  #   && adduser -S nonroot -G nonroot
