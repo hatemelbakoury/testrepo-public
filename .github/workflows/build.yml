@@ -11,7 +11,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag dummy-image
+    - name: Run Trivy vulnerability scanner in docker mode
+      uses: aquasecurity/trivy-action@master
+      with:
+          image-ref: 'dummy-image'
+          format: 'template'
+          template: '@/contrib/sarif.tpl'
+          output: 'trivy-results-docker.sarif'
+          severity: 'CRITICAL'
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
