@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 USER daemon
 #ENV password=123
 #RUN apt-get update && apt-get upgrade -y && apt-get install -y nginx
