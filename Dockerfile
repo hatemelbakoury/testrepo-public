@@ -1,7 +1,7 @@
-FROM ubuntu:latest 
-RUN sudo adduser -D appuser
-USER appuser
-#RUN  apt-get -y update && apt-get -y install nginx
+FROM ubuntu
+RUN apt-get update 
+RUN apt-get install –y nginx 
+CMD [“echo”,”Image created”] 
 RUN echo $PASSWORD
 EXPOSE 80
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
