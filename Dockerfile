@@ -5,4 +5,4 @@ USER daemon
 EXPOSE 80
 CMD [“echo”,”Image created”]
 CMD [“echo”,${password}] 
-#CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
