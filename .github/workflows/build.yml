@@ -21,11 +21,12 @@ jobs:
       uses: aquasecurity/trivy-action@master
       with:
           image-ref: 'dummy-image'
-          format: 'template'
-          template: '@/contrib/sarif.tpl'
+          format: 'sarif'
+          #template: '@/contrib/sarif.tpl'
           output: 'trivy-results-docker.sarif'
           severity: 'HIGH,CRITICAL'
           vuln-type: 'os,library'
+          exit-code: 1
     - name: Upload Trivy scan results to GitHub Security tab
       uses: github/codeql-action/upload-sarif@v2
       with:
