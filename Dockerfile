@@ -1,9 +1,6 @@
-FROM alpine
-RUN swapoff -a
-USER daemon
-#ENV password=123
-#RUN apt-get update && apt-get upgrade -y && apt-get install -y nginx
-EXPOSE 80
-CMD [“echo”,”Image created”]
-CMD [“echo”,${password}] 
-#CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+FROM node:10-alpine 
+RUN mkdir /app
+COPY . /app
+RUN chown -R node:node /app
+USER node
+CMD [“node”, “index.js”]
