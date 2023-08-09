@@ -1,5 +1,5 @@
-FROM ubuntu:18.04  
-RUN adduser -D appuser
+FROM ubuntu:latest 
+RUN sudo adduser -D appuser
 USER appuser
 #RUN  apt-get -y update && apt-get -y install nginx
 RUN echo $PASSWORD
