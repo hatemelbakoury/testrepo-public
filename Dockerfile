@@ -20,7 +20,7 @@ RUN npm install
 # Bundle code
 COPY . /app
 
-RUN chmod +x /app/start.sh
+#RUN chmod +x /app/start.sh
 
 EXPOSE 3000
 
