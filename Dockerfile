@@ -1,28 +1,8 @@
-#FROM library/node:6
-FROM ubuntu:xenial
-
-ENV STAGE "DOCKER"
-
-RUN apt-get update && apt-get -y upgrade && \
-    apt-get install -y nodejs npm netcat
-
-# Fix node links
-RUN ln -s /usr/bin/nodejs /usr/bin/node
-
-# Build app folders
-RUN mkdir /app
-WORKDIR /app
-
-# Install depends
-COPY . /app/
-RUN npm install
-
-# Bundle code
-COPY . /app
-
-#RUN chmod +x /app/start.sh
-
-EXPOSE 3000
-
-CMD [ "/app/start.sh" ]
-#CMD [ "npm", "start" ]
+FROM nginx
+USER daemon
+#ENV password=123
+#RUN apt-get update && apt-get upgrade -y && apt-get install -y nginx
+EXPOSE 80
+CMD [“echo”,”Image created”]
+CMD [“echo”,${password}] 
+#CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
