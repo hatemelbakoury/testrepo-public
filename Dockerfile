@@ -1,6 +1,6 @@
 FROM ubuntu
 USER daemon
-RUN apt-get update 
+RUN apt-get update && apt-get install -y apt-transport-https
 #RUN addgroup -S nonroot \
  #   && adduser -S nonroot -G nonroot
 USER nonroot
