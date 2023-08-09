@@ -16,10 +16,10 @@ jobs:
       uses: aquasecurity/trivy-action@master
       with:
           image-ref: 'dummy-image'
-          format: 'sarif'
+          format: 'template'
           template: '@/contrib/sarif.tpl'
           output: 'trivy-results-docker.sarif'
-          #severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
+          severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
