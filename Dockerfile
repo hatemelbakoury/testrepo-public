@@ -14,7 +14,7 @@ RUN mkdir /app
 WORKDIR /app
 
 # Install depends
-COPY package.json /app/
+COPY .
 RUN npm install
 
 # Bundle code
