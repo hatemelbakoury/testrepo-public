@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ruby:2.4.0
 USER daemon
 #ENV password=123
 #RUN apt-get update && apt-get upgrade -y && apt-get install -y nginx
