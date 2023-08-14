@@ -1,4 +1,4 @@
-FROM nginx
+FROM mysql
 USER daemon
 #ENV password=123
 #RUN apt-get update && apt-get upgrade -y && apt-get install -y nginx
