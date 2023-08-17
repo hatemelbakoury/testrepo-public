@@ -31,7 +31,8 @@ class MakeApiCall:
 
         parameters = {
             "username": "kedark",
-            "password": "tryme"
+            "password": "tryme",
+            "myvar": "myval"
         }
         self.get_user_data(api, parameters)
 
